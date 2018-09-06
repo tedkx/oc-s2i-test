@@ -7,6 +7,8 @@
 
 set -e
 
+git status
+
 # FIXME: Linking of global modules is disabled for now as it causes npm failures
 #        under RHEL7
 # Global modules good to have
@@ -69,13 +71,6 @@ if [ -z "$NODE_ENV" ]; then
     export NODE_ENV=production
   fi
 fi
-
-echo "Registry"
-npm config get registry
-echo "HttpProxy"
-npm config get proxy
-echo "HttpsProxy"
-npm config get https-proxy
 
 if [ "$NODE_ENV" != "production" ]; then
 
