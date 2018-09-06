@@ -70,6 +70,13 @@ if [ -z "$NODE_ENV" ]; then
   fi
 fi
 
+echo "Registry"
+npm config get registry
+echo "HttpProxy"
+npm config get proxy
+echo "HttpsProxy"
+npm config get https-proxy
+
 if [ "$NODE_ENV" != "production" ]; then
 
 	echo "---> Building your Node application from source"
